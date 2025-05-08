@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.game-board{
+    width: 80%;
+    height: 500px;
+    border: 1px solid #333;
+    margin: 0 auto; 
+    position: relative;/*respeitar o tamanho do board*/
+    overflow: hidden; /*o que tiver fora nao aparece*/
+}
+.pipe{
+    position: absolute;/* não interferir no comportamento da outra*/
+    bottom: 0; /*fixo em baixo*/
+    width: 80px;
+    right: -20px; /*começa fora da tela*/
+    animation: pipe-animation 2s infinite linear;/*usa a animação criada ali no keyframes */
+}
+@keyframes pipe-animation{
+    from{
+        right: 0;
+    }
+    to{
+        right: 100%;
+    }
+}
