@@ -4,6 +4,7 @@
     box-sizing: border-box;
 
 }
+
 .game-board{
     width: 80%;
     height: 500px;
@@ -12,18 +13,46 @@
     position: relative;/*respeitar o tamanho do board*/
     overflow: hidden; /*o que tiver fora nao aparece*/
 }
+.personagem{
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+   
+}
+.jump{ /*criado classe jump*/
+    animation: jump 500ms infinite ease-out;
+}
+
 .pipe{
     position: absolute;/* não interferir no comportamento da outra*/
     bottom: 0; /*fixo em baixo*/
     width: 80px;
     right: -20px; /*começa fora da tela*/
-    animation: pipe-animation 2s infinite linear;/*usa a animação criada ali no keyframes */
+    animation: pipe-animation 2s infinite linear;/*usa a animação criada ali no keyframes*/
 }
+
 @keyframes pipe-animation{
     from{
         right: 0;
     }
     to{
         right: 100%;
+    }
+}
+@keyframes jump{
+    0%{
+        bottom: 0;
+    }
+    40%{
+        bottom: 180px;
+    }
+    50%{
+        bottom: 180px;
+    }
+    60%{
+        bottom: 180px;
+    }
+    100%{
+        bottom: 0;
     }
 }
